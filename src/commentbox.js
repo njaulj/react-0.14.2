@@ -46,7 +46,9 @@ var CommentBox = React.createClass({
 	render:function(){
 		return (
 			<div className="commentBox">
-				<h1>Hello,world! I am a CommentBox!</h1>
+				<CountDown />
+				<MyComponent />
+				<h1 style={commentBoxStyle.title}>Hello,world! I am a CommentBox!</h1>
 				<CommentList data={this.state.data}/>
 				<CommentForm onCommentSubmit={this.handleCommentSumbit}/>
 			</div>
@@ -54,6 +56,11 @@ var CommentBox = React.createClass({
 	}
 })
 
+var commentBoxStyle = {
+	title:{
+		color:'blue'
+	}
+}
 
 ReactDOM.render(
 	<CommentBox url="http://localhost:3000/api/comments" pollInterval={2000}/>,

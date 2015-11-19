@@ -6,7 +6,7 @@ var Comment = React.createClass({
 	render:function(){
 		return (
 			<div className="comment">
-				<h2 className="commentAuthor">
+				<h2 style={commentStyle.author} className="commentAuthor">
 				{this.props.author}
 				</h2>
 				<span dangerouslySetInnerHTML={this.rawMarkup()}></span>
@@ -15,3 +15,9 @@ var Comment = React.createClass({
 		)
 	}
 })
+
+var commentStyle = {
+	author:{
+		color:'#666'
+	}
+}

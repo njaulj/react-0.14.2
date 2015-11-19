@@ -48,9 +48,11 @@ var CommentBox = React.createClass({
 		return React.createElement(
 			'div',
 			{ className: 'commentBox' },
+			React.createElement(CountDown, null),
+			React.createElement(MyComponent, null),
 			React.createElement(
 				'h1',
-				null,
+				{ style: commentBoxStyle.title },
 				'Hello,world! I am a CommentBox!'
 			),
 			React.createElement(CommentList, { data: this.state.data }),
@@ -58,5 +60,11 @@ var CommentBox = React.createClass({
 		);
 	}
 });
+
+var commentBoxStyle = {
+	title: {
+		color: 'blue'
+	}
+};
 
 ReactDOM.render(React.createElement(CommentBox, { url: 'http://localhost:3000/api/comments', pollInterval: 2000 }), document.getElementById('example'));

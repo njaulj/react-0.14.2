@@ -11,10 +11,16 @@ var Comment = React.createClass({
 			{ className: "comment" },
 			React.createElement(
 				"h2",
-				{ className: "commentAuthor" },
+				{ style: commentStyle.author, className: "commentAuthor" },
 				this.props.author
 			),
 			React.createElement("span", { dangerouslySetInnerHTML: this.rawMarkup() })
 		);
 	}
 });
+
+var commentStyle = {
+	author: {
+		color: '#666'
+	}
+};
